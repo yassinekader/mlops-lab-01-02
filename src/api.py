@@ -293,7 +293,7 @@ def predict(req: PredictRequest) -> dict[str, Any]:
 
 
     out: dict[str, Any] = {
-        "request_id": req.request_id,
+        "request_id": str(req.request_id)+"_"+str(len(req.request_id)),
         "model_version": model_name,
         "prediction": pred,
         "probability": round(proba, 6),
